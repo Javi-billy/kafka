@@ -1,0 +1,13 @@
+version: '3.9'
+services:  
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - 8000:8080
+    restart: always
+    environment:
+      KAFKA_CLUSTERS_0_NAME: trips      
+      KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL: SSL
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: b-2.dxdevmsktripsmsk01.ph1oih.c5.kafka.eu-central-1.amazonaws.com:9094
+
